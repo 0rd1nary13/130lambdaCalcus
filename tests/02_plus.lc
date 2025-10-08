@@ -19,14 +19,14 @@ let MUL   = \n m -> n (ADD m) ZERO
 eval inc_one :
   INC ONE
   -- (a) fill in your reductions here
-  =d> TWO
+  =~> TWO
 
 eval add_zero_zero :
   ADD ZERO ZERO
   -- (b) fill in your reductions here
-  =d> ZERO
+  =~> ZERO
 
 eval add_two_two :
   ADD TWO TWO
   -- (c) fill in your reductions here
-  =d> FOUR
+  =~> FOUR
