@@ -38,8 +38,8 @@ let TODO  = \i g n o r e -> i g n o r e
 -- do not modify text BEFORE this line
 --------------------------------------------------------------------------------
 
-let SKIP1 = \f p -> p (\b n -> \c -> c TRUE (ITE b ZERO (f n)))       -- (a)
-let DEC   = \n -> SND (n SKIP1 (PAIR FALSE ZERO))       -- (b)
+let SKIP1 = \f p -> p (\b n -> PAIR TRUE (ITE b (f n) ZERO))       -- (a)
+let DEC   = \n -> SND (n (SKIP1 INC) (PAIR FALSE ZERO))       -- (b)
 let SUB   = \n m -> m DEC n       -- (c)
 let ISZ   = \n -> n (\x -> FALSE) TRUE       -- (d)
 let EQL   = \n m -> AND (ISZ (SUB n m)) (ISZ (SUB m n))       -- (e)
